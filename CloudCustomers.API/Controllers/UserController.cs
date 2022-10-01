@@ -1,3 +1,4 @@
+using CloudCustomers.API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CloudCustomers.API.Controllers;
@@ -6,16 +7,17 @@ namespace CloudCustomers.API.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly ILogger<UserController> _logger;
+    //private readonly ILogger<UserController> _logger;
+    private readonly IUserService _userService;
 
-    public UserController(ILogger<UserController> logger)
+    public UserController(IUserService userService)
     {
-        _logger = logger;
+        _userService = userService;
     }
 
     [HttpGet(Name = "Getusers")]
-    public Task<IActionResult> Get()
+    public async Task<IActionResult> Get()
     {
-        return null;
+        return Ok("all good");
     }
 }
