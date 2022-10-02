@@ -1,6 +1,9 @@
-﻿namespace CloudCustomers.API.Interfaces
+﻿using CloudCustomers.API.Models;
+
+namespace CloudCustomers.API.Interfaces
 {
-    public class IUserService
+    public interface IUserService
     {
+        public Task<List<User>> GetAllUsers();
     }
 }
